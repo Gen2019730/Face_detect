@@ -1,5 +1,11 @@
 import cv2,numpy,os,re
 import PIL.Image as IMG
+import datetime
+
+
+
+
+
 
 
 recoginer = cv2.face_LBPHFaceRecognizer.create()
@@ -8,6 +14,13 @@ yml_path = r'F:\Test_Data\TrainerData\\'
 face_detecter = cv2.CascadeClassifier(
             'D:\openCV\opencv\sources\data\haarcascades\haarcascade_frontalface_default.xml')
 yml_list = []
+
+def calander():
+    timestamps = datetime.datetime.now()
+    calendar1 = timestamps[0:4] + '_' + timestamps[5:7] + timestamps[7:10]
+
+    return calendar1
+
 
 def read_yml(yml_num):
     # count = 0
